@@ -8,8 +8,6 @@ namespace DigitalMenu.AppService.Response
 {
     public class AddDishResponse : BaseResponse
     {
-        public string Id { get; set; }
-
-        
+        public string Id { get; set; }        
     }
 }

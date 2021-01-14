@@ -28,7 +28,7 @@ namespace DigitalMenu.AppService.Response
         }
     }
 
-    public class BaseResponse<TData> : Response
+    public class BaseResponse<TData> : BaseResponse
     {
         public TData Data { get; set; }
     }
