@@ -83,7 +83,7 @@ namespace DigitalMenu.Api.Controllers
 
         [HttpGet]
         [Route("[controller]/[action]")]
-        public async Task<IActionResult> GetMenuByTime(int meal, int dayOfWeek)
+        public async Task<IActionResult> GetMenuByParameter(int meal, int dayOfWeek)
         {
             var result = await _dishService.GetMenuByTime(meal, dayOfWeek);
             return Ok(result);
