@@ -12,7 +12,8 @@ namespace DigitalMenu.AppService.ViewModel
         public string Title { get; set; }
         public int EstimatedTime { get; set; }
         public double Price { get; set; }        
-        public IDictionary<string, string> Ingredients { get; set; }       
+        public IDictionary<string, string> Ingredients { get; set; }
+        public string Description { get; set; }
 
     }
 }

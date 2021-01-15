@@ -97,14 +97,22 @@ namespace DigitalMenu.NUnitTest
             validateResponse = addDishRequest.IsValid();
             Assert.AreEqual(false, validateResponse.Success);
             Assert.AreEqual(ErrorMessage.EstimatedTimeParameterNotValid, validateResponse.Message);
-            addDishRequest.Price = 30;
+            addDishRequest.EstimatedTime = 30;
 
             //Test wrong Title
             addDishRequest.Title = string.Empty;
             validateResponse = addDishRequest.IsValid();
             Assert.AreEqual(false, validateResponse.Success);
             Assert.AreEqual(ErrorMessage.TitleParameterNotValid, validateResponse.Message);
+            addDishRequest.Title = "something";
 
+            //Test wrong Ingredients
+            addDishRequest.Ingredients = new Dictionary<string, string>();
+            addDishRequest.Ingredients.Add(new KeyValuePair<string,string>(string.Empty, ""));
+            validateResponse = addDishRequest.IsValid();
+            Assert.IsFalse(validateResponse.Success);
+            Assert.AreEqual(ErrorMessage.IngredientsParameterNotValid, validateResponse.Message);
+            
         }
 
         [Test]

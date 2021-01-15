@@ -17,5 +17,6 @@ namespace DigitalMenu.AppService.Message
         public const string EstimatedTimeParameterNotValid = "Estimated time paramater is not valid";
         public const string MealTypeParameterNotValid = "AvaialbeInDay parameter is not valid, set a list of number(1-3)";
         public const string DayParameterNotValid = "Day parameter is not valid, set a list of number(1=AllDays or 2=Monday-8=Sunday)";
+        public const string IngredientsParameterNotValid = "Ingredients parameter is not valid";
     }
 }

@@ -142,13 +142,13 @@ namespace DigitalMenu.AppService.Services
             }
 
             return result;
-        }        
+        }
 
 
         public async Task<BaseResponse> ActiveDish(string id)
         {
             return await ActiveDeactive(id, false);
-        }        
+        }
         public async Task<BaseResponse> DeactiveDish(string id)
         {
             return await ActiveDeactive(id, true);
@@ -221,7 +221,7 @@ namespace DigitalMenu.AppService.Services
                 try
                 {
                     var dbDish = await _dishRepository.Get(ObjectId.Parse(id));
-                    
+
                     if (dbDish == null)
                     {
                         addDishResponse.SetError(ErrorMessage.RecordNotFound);
@@ -262,11 +262,11 @@ namespace DigitalMenu.AppService.Services
                 }
                 await _dishRepository.Delete(dish.Id);
             }
-            catch(TimeoutException)
+            catch (TimeoutException)
             {
                 response.SetError(ErrorMessage.TimeoutError);
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 response.SetError(ErrorMessage.FormatError);
             }
@@ -455,7 +455,8 @@ namespace DigitalMenu.AppService.Services
                         EstimatedTime = dish.EstimatedTime,
                         Ingredients = dish?.Ingredients,
                         Id = dish.Id.ToString(),
-                        Price = dish.Price
+                        Price = dish.Price,
+                        Description = dish.Description
                     }).ToList()
                 });
             }
@@ -476,7 +477,8 @@ namespace DigitalMenu.AppService.Services
                 EstimatedTime = addDishRequest.EstimatedTime,
                 Ingredients = addDishRequest.Ingredients,
                 IsDiactive = addDishRequest.IsDiactive,
-                Price = addDishRequest.Price
+                Price = addDishRequest.Price,
+                Description = addDishRequest.Description
             };
 
             return dish;
@@ -485,7 +487,7 @@ namespace DigitalMenu.AppService.Services
         private bool CheckIsAvaiableResturant(IEnumerable<WorkTimeSheet> workTimeSheets)
         {
             return workTimeSheets.Any(r => r.Day == DateTime.Now.DayOfWeek && r.IsOpen);
-        }        
-        
+        }
+
     }
 }

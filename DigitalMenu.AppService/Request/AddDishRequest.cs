@@ -17,5 +17,6 @@ namespace DigitalMenu.AppService.Request
         public IDictionary<string, string> Ingredients { get; set; }
         public int AvailableCount { get; set; }
         public bool IsDiactive { get; set; }
+        public string Description { get; set; }
     }
 }

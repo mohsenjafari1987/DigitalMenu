@@ -56,6 +56,17 @@ namespace DigitalMenu.AppService.Extention
                     return addDishResponse;
                 }
             }
+            if (addDishRequest.Ingredients.Count > 0)
+            {
+                foreach (var item in addDishRequest.Ingredients)
+                {
+                    if (string.IsNullOrEmpty(item.Key) || string.IsNullOrEmpty(item.Value))
+                    {
+                        addDishResponse.SetError(ErrorMessage.IngredientsParameterNotValid);
+                        return addDishResponse;
+                    }
+                }
+            }
 
             return addDishResponse;
         }
