@@ -26,7 +26,7 @@ namespace DigitalMenu.Api.Controllers
         /// fiojsdofj sosodj fosd foisd foisdhf ihdf
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
+        [HttpPost]
         [Route("[controller]/[action]")]
         public async Task<IActionResult> CreateSampleMenu()
         {
@@ -35,7 +35,7 @@ namespace DigitalMenu.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("[controller]/[action]")]
         public async Task<IActionResult> CreateSampleWorkTimeSheet()
         {

@@ -287,7 +287,7 @@ namespace DigitalMenu.AppService.Services
 
             Dish peperoni = new Dish
             {
-                Title = "peperoni".ToTitleForStore(),
+                Title = "Peperoni".ToTitleForStore(),
                 AvailableCount = 60,
                 Category = "Main Course".ToTitleForStore(),
                 SubCategory = "Pizza".ToTitleForStore(),
@@ -304,12 +304,12 @@ namespace DigitalMenu.AppService.Services
 
             peperoni.Days.Add(Day.Monday);
 
-            peperoni.Ingredients.Add(new KeyValuePair<string, string>("sosis", "100g"));
-            peperoni.Ingredients.Add(new KeyValuePair<string, string>("cheeze", "150g"));
+            peperoni.Ingredients.Add(new KeyValuePair<string, string>("Sausage", "100g"));
+            peperoni.Ingredients.Add(new KeyValuePair<string, string>("Cheese", "150g"));
 
             Dish mix = new Dish
             {
-                Title = "mix",
+                Title = "Milano",
                 AvailableCount = 60,
                 Category = "Main course".ToTitleForStore(),
                 SubCategory = "Pizza".ToTitleForStore(),
@@ -324,12 +324,12 @@ namespace DigitalMenu.AppService.Services
 
             mix.Days.Add(Day.AllDayOfWeek);
 
-            mix.Ingredients.Add(new KeyValuePair<string, string>("sosis", "100g"));
-            mix.Ingredients.Add(new KeyValuePair<string, string>("cheeze", "150g"));
+            mix.Ingredients.Add(new KeyValuePair<string, string>("Sausage", "100g"));
+            mix.Ingredients.Add(new KeyValuePair<string, string>("Cheese", "150g"));
 
-            Dish cheezeburger = new Dish
+            Dish Cheeseburger = new Dish
             {
-                Title = "cheezeburger",
+                Title = "Cheese Burger",
                 AvailableCount = 60,
                 Category = " main course".ToTitleForStore(),
                 SubCategory = "Hamburger".ToTitleForStore(),
@@ -340,17 +340,17 @@ namespace DigitalMenu.AppService.Services
                 Days = new List<Day>(),
                 Ingredients = new Dictionary<string, string>(),
             };
-            cheezeburger.MealType.Add(MealType.Lunch);
-            cheezeburger.MealType.Add(MealType.Dinner);
+            Cheeseburger.MealType.Add(MealType.Lunch);
+            Cheeseburger.MealType.Add(MealType.Dinner);
 
-            cheezeburger.Days.Add(Day.AllDayOfWeek);
+            Cheeseburger.Days.Add(Day.AllDayOfWeek);
 
-            cheezeburger.Ingredients.Add(new KeyValuePair<string, string>("hamburger", "100g"));
-            cheezeburger.Ingredients.Add(new KeyValuePair<string, string>("kahoo", "150g"));
+            Cheeseburger.Ingredients.Add(new KeyValuePair<string, string>("Hamburger", "100g"));
+            Cheeseburger.Ingredients.Add(new KeyValuePair<string, string>("Lettuce", "150g"));
 
             Dish doubleBurger = new Dish
             {
-                Title = "doubleBurger".ToTitleForStore(),
+                Title = "Double Burger".ToTitleForStore(),
                 AvailableCount = 60,
                 Category = "Main Course".ToTitleForStore(),
                 SubCategory = "Hamburger".ToTitleForStore(),
@@ -367,14 +367,14 @@ namespace DigitalMenu.AppService.Services
 
             doubleBurger.Days.Add(Day.AllDayOfWeek);
 
-            doubleBurger.Ingredients.Add(new KeyValuePair<string, string>("hamburger", "100g"));
-            doubleBurger.Ingredients.Add(new KeyValuePair<string, string>("cheeze", "150g"));
+            doubleBurger.Ingredients.Add(new KeyValuePair<string, string>("Hamburger", "300g"));
+            doubleBurger.Ingredients.Add(new KeyValuePair<string, string>("Cheese", "150g"));
 
             Dish ItalianIceCream = new Dish
             {
-                Title = "   italianIceCream".ToTitleForStore(),
+                Title = "   italian Ice Cream".ToTitleForStore(),
                 AvailableCount = 60,
-                Category = "Starter   ".ToTitleForStore(),
+                Category = "Dessert   ".ToTitleForStore(),
                 SubCategory = "Ice Cream".ToTitleForStore(),
                 EstimatedTime = 30,
                 IsDiactive = false,
@@ -388,16 +388,32 @@ namespace DigitalMenu.AppService.Services
 
             ItalianIceCream.Days.Add(Day.AllDayOfWeek);
 
-            ItalianIceCream.Ingredients.Add(new KeyValuePair<string, string>("Ice", "100g"));
-            ItalianIceCream.Ingredients.Add(new KeyValuePair<string, string>("Cream", "150g"));
+            Dish Salad = new Dish
+            {
+                Title = "   salad sezar".ToTitleForStore(),
+                AvailableCount = 60,
+                Category = "Starter   ".ToTitleForStore(),
+                SubCategory = "Salad".ToTitleForStore(),
+                EstimatedTime = 30,
+                IsDiactive = false,
+                Price = 10,
+                MealType = new List<MealType>(),
+                Days = new List<Day>(),
+                Ingredients = new Dictionary<string, string>(),
+            };
+            Salad.MealType.Add(MealType.Lunch);
+            Salad.MealType.Add(MealType.Dinner);
+
+            Salad.Days.Add(Day.AllDayOfWeek);
 
 
 
             dishes.Add(peperoni);
             dishes.Add(mix);
-            dishes.Add(cheezeburger);
+            dishes.Add(Cheeseburger);
             dishes.Add(doubleBurger);
             dishes.Add(ItalianIceCream);
+            dishes.Add(Salad);
 
             try
             {

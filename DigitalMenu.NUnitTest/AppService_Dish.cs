@@ -156,20 +156,7 @@ namespace DigitalMenu.NUnitTest
         {
             var actual = _dishService.Update(ObjectId.GenerateNewId().ToString(), new AddDishRequest()).Result;
             Assert.IsFalse(actual.Success);                       
-        }
-
-        [Test]
-        public void Database_Address_InValid()
-        {
-            var mongoDBContext = new MongoDBContext("mongodb://128.0.0.1:27017", "DigitalMenu");
-            var dishRepository = new DishRepository(mongoDBContext);
-            var workTimeSheetRpository = new WorkTimeSheetRepository(mongoDBContext);
-            var dishService = new DishService(dishRepository, workTimeSheetRpository);
-
-            var actual = dishService.GetMenu().Result;
-            Assert.IsFalse(actual.Success);
-            Assert.AreEqual(actual.Message, ErrorMessage.TimeoutError);
-        }
+        }        
 
         [Test]
         public void Database_NotFound()
